@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/0okul8s786lo10kl?svg=true)](https://ci.appveyor.com/project/Gto1103/ra-props-listing)
+[![Build status](https://ci.appveyor.com/api/projects/status/naquby7e2yc2tkmx?svg=true)](https://ci.appveyor.com/project/Gto1103/ra-router-crud)
 
 [Страница проекта](https://gto1103.github.io/ra-router-crud/)
 

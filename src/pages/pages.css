@@ -1,0 +1,29 @@
+.new-post-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.home-page {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.post-list {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper-list{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}

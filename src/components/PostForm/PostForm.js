@@ -1,18 +1,16 @@
 
 import './PostForm.css'
-import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import Button from '../Button/Button';
 
-const PostForm = ({ name, labelText, onAddPost, styleButton, buttonText }) => {
+const PostForm = ({ name, labelText, textValue, onAddPost, styleButton, buttonText }) => {
 
-	const [form, setForm] = useState({content: ''});
+	const [form, setForm] = useState({content: '' || textValue});
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 		if (form.content !== '') {
-			const newPost = {"id": nanoid(), "content": form.content};
-			onAddPost(newPost);
+			onAddPost(form.content);
 			setForm({content: ''})};
 	}
 
@@ -29,7 +27,7 @@ const PostForm = ({ name, labelText, onAddPost, styleButton, buttonText }) => {
 					className={"form-" + name}
 					placeholder="Введите текст нового поста..."
 					type="text"
-					value={form.con}
+					value={form.content}
 					onChange={handleChange}
 					required>
 				</textarea>

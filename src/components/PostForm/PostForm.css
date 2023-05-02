@@ -7,7 +7,7 @@
 	flex-direction: column;
 }
 
-.form-newPost {
+.form-newPost, .form-editPost {
 	min-width: 300px;
 	min-height: 150px;
 	margin: 10px;
@@ -16,11 +16,11 @@
 	border: 1px solid black;
 }
 
-.form-newPost:hover {
+.form-newPost:hover, .form-editPost:hover {
 	border: 2px solid black;
 }
 
-.label-newPost {
+.label-newPost, .label-editPost {
 	width: 120px;
 	font-size: 15px;
 	color: blue;
@@ -33,6 +33,6 @@
 	border: 1px solid black;
 }
 
-.form-newPost::placeholder {
+.form-newPost::placeholder, .form-editPost::placeholder{
 	color: blue;
 }

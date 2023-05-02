@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import PostForm from "../components/PostForm/PostForm";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -13,7 +14,7 @@ const CreateNewPost = () => {
 
 	const onAddPost = (newPost) => {
 		setLoading(true);
-		const post = JSON.stringify(newPost);
+		const post = JSON.stringify({"id": 0 , "content": newPost});
 		fetch(url, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -24,8 +25,6 @@ const CreateNewPost = () => {
 			setError(e.message);
 			setLoading(false);
 		})
-		
-		console.log(post, isLoading, hasError);
 	}
 
 	return (
@@ -34,10 +33,8 @@ const CreateNewPost = () => {
 				labelText='Новый пост'
 				onAddPost={onAddPost} 
 				styleButton={color}
-				buttonText="Publish"/>
+				buttonText="Опубликовать"/>
 		)
-
-
 }
 
 export default CreateNewPost;

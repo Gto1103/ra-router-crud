@@ -1,7 +1,7 @@
 import PostItem from "./PostItem/PostItem";
 import Button from "./Button/Button";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const url = 'http://localhost:7070/posts/';
 const opts = { 
@@ -10,9 +10,11 @@ const opts = {
 };
 
 const PostList = ({ buttonName, color }) => {
-	
+
 	const navigate = useNavigate();
+	
 	const [posts, setPosts] = useState([]);
+	// eslint-disable-next-line no-unused-vars
 	const [hasError, setError] = useState(null);
 	const [isLoading, setLoading] = useState(true);
 
@@ -37,24 +39,28 @@ const PostList = ({ buttonName, color }) => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	console.log(posts, isLoading, hasError);
+	// console.log(posts, isLoading, hasError);
 
 	const onClick = () => {
-		navigate('posts/new/');
+		navigate('new/');
 	}
 
 	return (
 		<div className="wrapper-list">
 			<Button buttonName={buttonName} style={color} onClick={onClick} >Создать пост</Button>
 			<ul className="post-list">
-			{posts.length && posts.reverse().map(item=> <PostItem 
-				key={item.id}
-				image="https://i.pravatar.cc/50"
-				userName="Name" 
-				date={item.created}
-				id={item.id}>
-					{item.content}
-				</PostItem>)}
+			{!isLoading || posts.lenght ? posts.reverse().map(item=> 
+				<Link className='post-link' key={item.id} to={`/posts/${item.id}`}>
+				<PostItem 
+					key={item.id}
+					image="https://i.pravatar.cc/50"
+					userName="Name" 
+					date={item.created}
+					id={item.id}>
+						{item.content}
+				</PostItem>
+			</Link>)
+				: null}
 			</ul>
 		</div>
 	)

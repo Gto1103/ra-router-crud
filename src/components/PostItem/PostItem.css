@@ -1,4 +1,9 @@
 
+.post-link {
+	list-style-type: none;
+	text-decoration: none;
+}
+
 .post-item {
 	list-style-type: none;
 	color: black;
@@ -40,6 +45,7 @@
 }
 
 .post-item-text, .post-item-date {
+	overflow-wrap: break-word;
 	font-size: 20px;
 	padding: 10px;
 }
